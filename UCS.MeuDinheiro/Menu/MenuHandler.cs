@@ -45,6 +45,27 @@ namespace UCS.MeuDinheiro.Menu
                 Description = "Atualizar Cliente",
                 Action = new ActionCustomerUpdate()
             });
+
+            MenuItems.Add(new MenuItem
+            {
+                Option = 5,
+                Description = "Cadastrar Conta",
+                Action = new ActionBankAccountCreation()
+            });
+
+            MenuItems.Add(new MenuItem
+            {
+                Option = 6,
+                Description = "Listar Contas de um Cliente",
+                Action = new ActionBankAccountList()
+            });
+
+            MenuItems.Add(new MenuItem
+            {
+                Option = 7,
+                Description = "Encerrar a Conta de um Cliente",
+                Action = new ActionBankAccountClose()
+            });
         }
 
         public void Interact()

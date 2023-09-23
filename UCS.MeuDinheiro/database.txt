@@ -1,0 +1,20 @@
+﻿CREATE DATABASE MeuDinheiro
+GO
+
+CREATE TABLE Customer (
+    Id INT NOT NULL,
+    [Name] NVARCHAR(256) NOT NULL,
+    PRIMARY KEY (Id)
+)
+GO
+
+CREATE TABLE BankAccount (
+    Id INT NOT NULL,
+    CustomerId INT NOT NULL,
+    Balance DECIMAL(10,2) NOT NULL DEFAULT 0,
+    PRIMARY KEY (Id),
+    FOREIGN KEY (CustomerId)
+      REFERENCES dbo.Customer (Id)
+)
+GO
+

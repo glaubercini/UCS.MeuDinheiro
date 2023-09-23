@@ -18,3 +18,13 @@ CREATE TABLE BankAccount (
 )
 GO
 
+CREATE TABLE BankAccountStatement (
+    Id INT IDENTITY(1,1) NOT NULL,
+    BankAccountId INT NOT NULL,
+    [Description] NVARCHAR(128) NOT NULL,
+    Amount DECIMAL(10,2) NOT NULL DEFAULT 0,
+    PRIMARY KEY (Id),
+    FOREIGN KEY (BankAccountId)
+      REFERENCES dbo.BankAccount (Id)
+)
+GO

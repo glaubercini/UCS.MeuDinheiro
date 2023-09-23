@@ -9,6 +9,7 @@ namespace UCS.MeuDinheiro.Menu
     internal class MenuHandler
     {
         public List<MenuItem> MenuItems { get; set; } = new();
+
         public MenuHandler()
         {
             MenuItems.Add(new MenuItem
@@ -65,6 +66,13 @@ namespace UCS.MeuDinheiro.Menu
                 Option = 7,
                 Description = "Encerrar a Conta de um Cliente",
                 Action = new ActionBankAccountClose()
+            });
+
+            MenuItems.Add(new MenuItem
+            {
+                Option = 8,
+                Description = "Movimentar uma conta Bancária",
+                Action = new ActionBankAccountStatementMove()
             });
         }
 

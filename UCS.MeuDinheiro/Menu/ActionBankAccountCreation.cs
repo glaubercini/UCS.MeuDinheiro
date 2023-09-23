@@ -21,7 +21,7 @@ namespace UCS.MeuDinheiro.Menu
             string? id_customer_string = Console.ReadLine();
             int id_customer = int.Parse(id_customer_string ?? "0");
 
-            var ctx = new MeuDinheiroContext();
+            using var ctx = new MeuDinheiroContext();
             ctx.BankAccount.Add(new BankAccount
             {
                 Id = id,

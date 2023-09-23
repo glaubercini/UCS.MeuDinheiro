@@ -25,7 +25,7 @@ namespace UCS.MeuDinheiro.Menu
                 throw new Exception("O nome estava em branco");
             }
 
-            var ctx = new MeuDinheiroContext();
+            using var ctx = new MeuDinheiroContext();
             var c = ctx.Customer.Where(x => x.Id == id).FirstOrDefault();
 
             if (c != null)

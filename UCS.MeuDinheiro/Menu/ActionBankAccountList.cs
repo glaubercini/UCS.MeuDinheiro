@@ -18,7 +18,7 @@ namespace UCS.MeuDinheiro.Menu
             string? id_string = Console.ReadLine();
             int id = int.Parse(id_string ?? "0");
 
-            var ctx = new MeuDinheiroContext();
+            using var ctx = new MeuDinheiroContext();
 
             var c = ctx.Customer.Where(x => x.Id == id).FirstOrDefault();
             if (c != null)

@@ -20,6 +20,8 @@ namespace UCS.MeuDinheiro.EF.Context
 
         public DbSet<BankAccount> BankAccount { get; set; }
 
+        public DbSet<BankAccountStatement> BankAccountStatement { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => optionsBuilder
                 .UseSqlServer(string.Format(

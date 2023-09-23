@@ -14,7 +14,7 @@ namespace UCS.MeuDinheiro.Menu
         {
             Console.WriteLine("# LISTA DE CLIENTES #");
 
-            var ctx = new MeuDinheiroContext();
+            using var ctx = new MeuDinheiroContext();
             foreach (var item in ctx.Customer)
             {
                 Console.WriteLine($"Código {item.Id} - Nome: {item.Name}");
